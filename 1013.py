@@ -1,24 +1,24 @@
-# Consumo
+# O Maior
+# Faça um programa que leia três valores
+# e apresente o maior dos três valores lidos
+# seguido da mensagem “eh o maior”. Utilize
+# a fórmula:
 
-# Calcule o consumo médio de um automóvel sendo
-# fornecidos a distância total percorrida (em Km)
-# e o total de combustível gasto (em litros).
+# MaiorAB = (A+B+ABS(A-B))/2
+
+# Obs.: a fórmula apenas calcula o maior entre
+# os dois primeiros (a e b). Um segundo passo,
+# portanto é necessário para chegar no resultado
+# esperado.
 
 # Entrada
-# O arquivo de entrada contém dois valores: um 
-# valor inteiro X representando a distância total
-# percorrida (em Km), e um valor real Y representando
-# o total de combustível gasto, com um dígito após 
-# o ponto decimal.
+# O arquivo de entrada contém três valores inteiros.
 
 # Saída
-# Apresente o valor que representa o consumo médio 
-# do automóvel com 3 casas após a vírgula, seguido 
-# da mensagem "km/l".
+# Imprima o maior dos três valores seguido por um
+# espaço e a mensagem "eh o maior".
 
-distancia_total = int(input())
-gasto_combustivel = float(input())
+a, b, c = map(int, input().split())
 
-consumo_medio = distancia_total / gasto_combustivel
-
-print(f'{consumo_medio:.3f}'" km/l")
+maior = max(a, b, c)
+print(f'{maior}'' eh o maior')
