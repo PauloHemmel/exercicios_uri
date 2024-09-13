@@ -20,5 +20,10 @@
 
 a, b, c = map(int, input().split())
 
-maior = max(a, b, c)
-print(f'{maior}'' eh o maior')
+# maior = max(a, b, c)
+# print(f'{maior}'' eh o maior')
+
+MaiorAB = (a + b + abs (a - b))/2
+Maior_AB_C = (MaiorAB + c + abs (MaiorAB - c))/2
+
+print(f'{Maior_AB_C:.0f}'' eh o maior')
