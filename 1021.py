@@ -28,26 +28,17 @@
 entrada = int(input())
 
 lista_notas = [100, 50, 20, 10, 5, 2, 1]
-
-
-lista_resto = []
 lista_inteiro = []
 indice = 0
 valor_resto = entrada
 
 while indice < 7:
-
-    lista_resto.append(valor_resto % lista_notas[indice])
     lista_inteiro.append(valor_resto // lista_notas[indice])
-    valor_resto = lista_resto[indice]
+    valor_resto = valor_resto % lista_notas[indice]
     indice += 1
 
-    #print(lista_resto)
-#print(lista_inteiro)
-
-print(f'{entrada}')
+print(entrada)
 indice2 = 0
 while indice2 < 7:
     print(f'{lista_inteiro[indice2]} nota(s) de R$ {lista_notas[indice2]},00')
-
     indice2 += 1
