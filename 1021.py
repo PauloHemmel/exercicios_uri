@@ -1,44 +1,47 @@
+
 # entrada = float(input())
 
 # lista_notas = [100, 50, 20, 10, 5, 2, 1, 0.50, 0.25, 0.10, 0.05, 0.01]
-
-
-# lista_resto = []
 # lista_inteiro = []
 # indice = 0
 # valor_resto = entrada
 
 # while indice < 12:
-
-#     lista_resto.append(valor_resto % lista_notas[indice])
 #     lista_inteiro.append(valor_resto // lista_notas[indice])
-#     valor_resto = lista_resto[indice]
+#     valor_resto = valor_resto % lista_notas[indice]
 #     indice += 1
 
-#     #print(lista_resto)
-# #print(lista_inteiro)
-
-# print(f'{entrada:0.0f}')
+# print('NOTAS:')
 # indice2 = 0
 # while indice2 < 6:
-#     print(f'{lista_inteiro[indice2]:0.0f} nota(s) de R$ {lista_notas[indice2]},00')
-
+#     print(f'{lista_inteiro[indice2]:0.0f} nota(s) de R$ {lista_notas[indice2]:0.2f}')
 #     indice2 += 1
+# print('MOEDAS:')
+# indice3 = 6
+# while indice3 < 12:
+#     print(f'{lista_inteiro[indice3]:0.0f} moeda(s) de R$ {lista_notas[indice3]:0.2f}')
+#     indice3 += 1
 
-entrada = int(input())
+entrada = float(input()) * 100  # Trabalhar com valores inteiros (centavos)
 
-lista_notas = [100, 50, 20, 10, 5, 2, 1]
+lista_notas = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]  # Tudo em centavos
 lista_inteiro = []
 indice = 0
-valor_resto = entrada
+valor_resto = int(round(entrada))  # Arredondar para evitar problemas de precisão
 
-while indice < 7:
+while indice < 12:
     lista_inteiro.append(valor_resto // lista_notas[indice])
     valor_resto = valor_resto % lista_notas[indice]
     indice += 1
 
-print(entrada)
+print('NOTAS:')
 indice2 = 0
-while indice2 < 7:
-    print(f'{lista_inteiro[indice2]} nota(s) de R$ {lista_notas[indice2]},00')
+while indice2 < 6:
+    print(f'{lista_inteiro[indice2]:0.0f} nota(s) de R$ {lista_notas[indice2] / 100:0.2f}')
     indice2 += 1
+
+print('MOEDAS:')
+indice3 = 6
+while indice3 < 12:
+    print(f'{lista_inteiro[indice3]:0.0f} moeda(s) de R$ {lista_notas[indice3] / 100:0.2f}')
+    indice3 += 1
